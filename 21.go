@@ -11,12 +11,12 @@ type ListNode struct {
 
 func main() {
 	l1 := &ListNode{0, nil}
-	l1.Insert(1, 2)
-	l1.Insert(2, 4)
-	l1.Insert(3, 3)
+	l1.Insert(1, 1)
+	l1.Insert(2, 2)
+	l1.Insert(3, 4)
 	l2 := &ListNode{0, nil}
-	l2.Insert(1, 5)
-	l2.Insert(2, 6)
+	l2.Insert(1, 1)
+	l2.Insert(2, 3)
 	l2.Insert(3, 4)
 	fmt.Println(addTwoNumbers(l1, l2))
 }
@@ -39,24 +39,23 @@ func (head *ListNode) Insert(i int, e int) bool {
 }
 
 func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
-	var ret = &ListNode{0, nil}
-	var p = ret
-	var i = 0
-	for l1 != nil || l2 != nil || i != 0 {
-		var intL1, intL2 int
-		if l1 != nil {
-			intL1 = l1.Val
+	h := &ListNode{}
+	l := h
+	for nil != l1 && nil != l2 {
+		if l1.Val <= l2.Val {
+			l.Next = l1
 			l1 = l1.Next
-		}
-		if l2 != nil {
-			intL2 = l2.Val
+		} else {
+			l.Next = l2
 			l2 = l2.Next
 		}
-		total := intL1 + intL2 + i
-		i = total / 10
-		fmt.Println(total % 10)
-		p.Next = &ListNode{total % 10, nil}
-		p = p.Next
+		l = l.Next
 	}
-	return ret.Next
+	if l1 != nil {
+		l.Next = l1
+	} else {
+		l.Next = l2
+	}
+
+	return h.Next
 }
