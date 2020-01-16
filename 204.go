@@ -5,7 +5,7 @@ import (
 )
 
 func main() {
-	a := countPrimes(1500000)
+	a := countPrimes(100)
 	fmt.Println("a=", a)
 }
 
