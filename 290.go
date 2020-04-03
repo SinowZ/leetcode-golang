@@ -11,9 +11,7 @@ func main() {
 }
 
 func wordPattern(pattern string, str string) bool {
-	if pattern == "" || str == "" {
-		return false
-	}
+
 	strs := strings.Split(str, " ")
 	if len(pattern) != len(strs) {
 		return false
