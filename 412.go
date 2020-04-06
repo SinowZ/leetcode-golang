@@ -23,7 +23,6 @@ func fizzBuzz(n int) []string {
 			result = append(result, "Buzz")
 		} else {
 			result = append(result, strconv.Itoa(i))
-			fmt.Println("---------", strconv.Itoa(i))
 		}
 	}
 
