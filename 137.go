@@ -7,11 +7,11 @@ import (
 func main() {
 	nums := []int{2, 2, 3, 2}
 	a := findMin(nums)
-	fmt.Println("a=", a)
+	fmt.Println("a=", a, ^4)
 }
 
 //l^n 不进位加法计算  4^2 = 0000 0100 + 0000 0010 = 0000 0110 = 6
-//^h  按位取反       ^4 = 0000 0100
+//^h  按位取反       ^4 = = -5  ^n = = -(n+1)
 // & 相加
 func findMin(nums []int) int {
 	h, l := 0, 0
