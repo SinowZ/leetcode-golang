@@ -16,7 +16,7 @@ func isSubsequence(s string, t string) bool {
 		if location == -1 {
 			return false
 		}
-		t = t[location+1 : len(t)]
+		t = t[location+1:]
 	}
 	return true
 }
